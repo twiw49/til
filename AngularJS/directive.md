@@ -55,7 +55,7 @@ app.controller('myCtrl', function($scope) {
 
 ## ng-repeat
 
-* ng-repeat directive is a looping construct
+* `ng-repeat` directive is a looping construct
   * loops over items in a collection
   * instantiates a template for each item
 
@@ -83,3 +83,25 @@ app.controller('myCtrl', function($scope) {
 
 </div>
 ```
+
+
+
+## ng-show
+
+* `ng-show` directive shows the specified HTML element if the expression evaluates to true, otherwise the HTML element is hidden.
+* `<element ng-show="expression">...</element>`
+  * An expression will show the element only if the expression returns true.
+
+```html
+<body ng-app="">
+
+Show HTML: <input type="checkbox" ng-model="myVar">
+  
+<div ng-show="myVar">
+  <h1>Welcome</h1>
+  <p>Welcome to my home.</p>
+</div>
+
+</body>
+```
+

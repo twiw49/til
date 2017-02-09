@@ -148,3 +148,29 @@ app.controller('myCtrl', function($scope) {
 </script>
 </body>
 ```
+
+
+
+## nested scope
+
+```javascript
+<div ng-controller="myController">
+   <h1>my Controller Scope Here</h1>
+   <input type="text" ng-model="myCtrl.data"/>
+   <div ng-controller="innerController">
+      {{myCtrl.data}}: {{innerCtrl}}
+   </div>
+</div>
+
+app.controller('myController', function($scope){
+    $scope.myCtrl = {};
+})
+
+app.controller('innerController', function($scope){
+    $scope.innerCtrl = 'inner Data';
+})
+```
+
+* innerController의 scope는 myController의 scope에 포함된 nested scope이다.
+* nested scope에서는 parent scope에 접근할 수 있다. 
+* innerController의 scope 내에서 myController.myCtrl.data 대신에 myCtrl.data 사용할 수 있다.
